@@ -1,0 +1,33 @@
+<div class="container" *ngIf="isDefinedQA()">
+    <h3>Question:</h3>
+    <div [innerHTML]="qa.question.txt" class="questionTxt"></div>
+    <div class="testImg" *ngIf="qa.question.img.length>0"><br/><p align="center"><img src={{qa.question.img}}/><p></div>
+    <form (ngSubmit)="quizStopPlaying()">
+        <div class="form-group">
+            <table>
+                <tr *ngFor="let oneqa of qa.propAnswers; let i = index">
+                    <td align="center" width="50px"><input class="big-checkbox" type="checkbox" [checked]="oneqa.isSelected" disabled></td>
+                    <td>
+                        <div *ngIf="oneqa.isCorrect">
+                            <br/>
+                            <div class="correctAnswer" [innerHTML]="oneqa.data.txt"></div>
+                            <div class="testImg" *ngIf="oneqa.data.img.length>0"><br/><p align="center"><img src="{{oneqa.data.img}}"/><p></div>
+                            <br/>
+                        </div>
+                        <div *ngIf="!oneqa.isCorrect">
+                            <br/>
+                            <div class="wrongAnswer" *ngIf="oneqa.isSelected" [innerHTML]="oneqa.data.txt"></div>
+                            <div *ngIf="!oneqa.isSelected" [innerHTML]="oneqa.data.txt"></div>
+                            <div class="testImg" *ngIf="oneqa.data.img.length>0"><br/><p align="center"><img src="{{oneqa.data.img}}"/><p></div>
+                            <br/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <button type="button" (click)="playAgain()">More</button>&nbsp;&nbsp;
+            <button type="submit">Stop</button>
+        </div>
+    </form>
+
+</div>

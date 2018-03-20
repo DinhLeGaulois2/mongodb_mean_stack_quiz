@@ -1,0 +1,8 @@
+<div class="container">
+    <div *ngIf="state == 'general'">
+        <generalinfo (stateChange)=onNofity($event)>general</generalinfo>
+    </div>
+    <div *ngIf="state == 'questionsanswers'">
+        <questionanswer>questioninfo</questionanswer>
+    </div>
+</div>

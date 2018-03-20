@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngIf="!isDone">
+        <div class="propaganda">
+            <h2 align="center">{{quizName}}</h2>
+            <h2 align="center">({{quizSubject}})</h2>
+        </div>
+        <br/>
+        <div *ngIf="isQuestion">
+            <quiz-question-play (stateChange)=goCheckAnswers()></quiz-question-play>
+        </div>
+        <div *ngIf="!isQuestion">
+            <quiz-play-check (stateChange)=setNewQuestion()></quiz-play-check>
+        </div>
+    </div>
+</div>

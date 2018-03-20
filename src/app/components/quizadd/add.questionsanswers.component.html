@@ -1,0 +1,40 @@
+<div class="container">
+    <form (ngSubmit)="quizDone()">
+        <div class="form-group">
+            <label>Question's Subject</label>
+            <input class="form-control" type="text" [(ngModel)]="q_a.subject" name="q_a.subject">
+            <br/>
+            <label>Question (text)</label>
+            <input class="form-control" type="text" [(ngModel)]="q_a.question.txt" name="q_a.question.txt">
+            <br/>
+            <label>Question (image)</label>
+            <input class="form-control" type="text" [(ngModel)]="q_a.question.img" name="q_a.question.img">
+            <br/>
+            <label>Number of Proposed Answers</label>
+            <input class="form-control" type="number" [(ngModel)]="numProposedAnswers" name="numProposedAnswers" (ngModelChange)="createPA($event)">
+            <br/>
+            <div *ngIf="numProposedAnswers > 0">
+                <table>
+                    <thead>
+                        <th>&nbsp;Correct</th>
+                        <th>&nbsp;Proposed Answer</th>
+                    </thead>
+                    <tr *ngFor="let oneqa of q_a.propAnswers">
+                        <td align="center"><input class="big-checkbox form-control" type="checkbox" [(ngModel)]="oneqa.isCorrect" name="oneqa.isCorrect"></td>
+                        <td>
+                            <br/>
+                            <input class="form-control" type="text" [(ngModel)]="oneqa.data.txt" name="oneqa.txt" placeholder="Text">
+                            <input class="form-control" type="text" [(ngModel)]="oneqa.data.img" name="oneqa.img" placeholder="Image">
+                            <br/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/><br/>
+            <button type="submit">Save Quiz</button>&nbsp;&nbsp;
+
+            <button type="button" (click)="setNewQuestion()">More Question</button>
+        </div>
+    </form>
+
+</div>

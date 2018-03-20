@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size:200%;
+}
+
+.nav-link{
+    display: inline-block;
+  /*font-size:300%;*/
+  padding:5px 10px;
+  margin:10px;
+  color:white;
+  background-color:#428bca;
+  box-shadow: 3px 3px #214767;
+  border-radius:10px;
+}
+
+.generalInfo{
+  background-color:black;
+  color:cyan;
+  padding:5px 10px;
+  margin:10px;
+  box-shadow: 3px 3px #214767;
+  border-radius:10px;
+}
+
+.nav{
+  text-align:center;
+  background-color:#111d28;
+  width:100%;
+  margin:10px 0px;
+  padding:10px;
+  border-radius:30px;
+}
+
+@media (min-width: 768px) {
+    .navbar-centered .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .navbar-centered .navbar-nav > li {
+        float: none;
+    }
+    .navbar-centered .nav > li {
+        display: inline;
+    }
+    .navbar-centered .nav > li > a {
+        display: inline-block;
+    }
+}
+
+.propaganda{
+  text-align: center;
+  background-color:black;
+  color:cyan;
+  font-size:50px;
+  padding:10px;
+  border-radius:30px;
+}
+
+tr:nth-child(even) {background-color: #77c3f3}
+
+table{
+  width:100%;
+}
+
+.big-checkbox {
+    width: 30px; 
+    height: 30px;
+    box-shadow: 3px 3px black;    
+}
+
+th{
+  text-align: center;
+}
+
+td{
+  text-align: left;
+  padding:0px 5px;
+}
+
+.correctAnswer, .wrongAnswer{
+  font-weight: bold;
+}
+
+.correctAnswer{ color:green; }
+
+.wrongAnswer{ 
+  color:red;
+  text-decoration: line-through;
+}
+
+.questionTxt{
+  background-color:#0d6791;
+  color:white;
+  text-align: center;
+  font-size:200%;
+  padding:15px;
+  border-radius:10px;
+}

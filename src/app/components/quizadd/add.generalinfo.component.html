@@ -1,0 +1,14 @@
+<div class="container">
+    <form (ngSubmit)="changeStateAtParent()">
+        <div class="form-group">
+            <label>Quiz's Name</label>
+            <input class="form-control" type="text" [(ngModel)]="name" name="name">
+            <br/>
+            <label>Quiz's Subject</label>
+            <input class="form-control" type="text" [(ngModel)]="subject" name="subject">
+            <br/>
+            <button type="submit">Add Questions Now</button>
+        </div>
+    </form>
+
+</div>
